@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b0a">
+  <title>VORTEX CONTROL</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #080b0a;
+      color: #f1f7f3;
+      font-family: Arial, sans-serif;
+    }
+    main {
+      max-width: 650px;
+      margin: 40px auto;
+    }
+    .brand {
+      color: #36e58a;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    h1 { font-size: 38px; margin-bottom: 8px; }
+    p { color: #a7b7ac; line-height: 1.6; }
+    .card {
+      background: #101713;
+      border: 1px solid #26352c;
+      border-radius: 18px;
+      padding: 22px;
+      margin-top: 20px;
+    }
+    .status { color: #e8c56a; }
+    button {
+      background: #36e58a;
+      color: #06160c;
+      border: 0;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+    .note { font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">VORTEX / CONTROL CENTER</div>
+    <h1>Control your edge.</h1>
+    <p>Your trading command center for VORTEX SCALPER.</p>
+
+    <section class="card">
+      <h2>Personal EA control</h2>
+      <p>Bot: <strong>VORTEX SCALPER</strong></p>
+      <p class="status" id="status">Connection not configured</p>
+      <button id="toggle">Preview ON</button>
+      <p class="note">
+        Preview only. This button does not control MT5.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Membership</h2>
+      <p>Monthly plan: R199</p>
+      <p>Annual plan: R1,999</p>
+      <p class="note">
+        Example prices only. Payments are not active.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    let previewOn = false;
+    const button = document.getElementById("toggle");
+    const status = document.getElementById("status");
+
+    button.addEventListener("click", () => {
+      previewOn = !previewOn;
+      button.textContent = previewOn ? "Preview OFF" : "Preview ON";
+      status.textContent = previewOn
+        ? "Preview switched ON — MT5 unchanged"
+        : "Preview switched OFF — MT5 unchanged";
+    });
+  </script>
+</body>
+</html>
